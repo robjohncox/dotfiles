@@ -14,7 +14,7 @@ set bs=1
 set ru
 set tabstop=4
 set shiftwidth=4
-"set expandtab
+set expandtab
 set backspace=indent,eol,start
 set ruler
 set scrolloff=10

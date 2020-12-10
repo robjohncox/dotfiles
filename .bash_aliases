@@ -137,9 +137,17 @@ alias hgrep='history | grep'
 # Auto completion
 source ~/.django-bash-completion
 
+# Virtualenv prompt is usually superfluous
 export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+# One-off editing should default to vim
 export EDITOR=vim
+
+# Needed at work
 export BITBUCKET_USER=robjohncox
+
+# Stops OSX telling me to use zsh
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Start ssh agent
 SSH_ENV="$HOME/.ssh/agent-env"
@@ -163,3 +171,4 @@ if [ -f "${SSH_ENV}" ]; then
 else
     start_agent;
 fi
+
