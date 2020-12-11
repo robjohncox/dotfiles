@@ -95,7 +95,7 @@ User="\u"
 [[ -f ~/.git-prompt.sh ]] && source ~/.git-prompt.sh
 
 # Git version
-export PS1=$IBlack$Time12a$Color_Off'$(git branch &>/dev/null;\
+export PS1=$IBlack$Time12a$Color_Off' '$Yellow'$(echo $?)'$Color_Off'$(git branch &>/dev/null;\
 if [ $? -eq 0 ]; then \
   echo "$(echo `git status -uno 2>/dev/null` | grep "nothing to commit" > /dev/null 2>&1; \
   if [ "$?" -eq "0" ]; then \
@@ -104,7 +104,7 @@ if [ $? -eq 0 ]; then \
   else \
     # @5 - Changes to working tree
     echo "'$IRed'"$(__git_ps1 " {%s}"); \
-  fi) '$BYellow$User@$Host:$PathShort$Color_Off'\$ "; \
+  fi) '$Yellow$User@$Host:$PathShort$Color_Off'\$ "; \
 else \
   # @2 - Prompt when not in GIT repo
   echo " '$Yellow$User@$Host:$PathShort$Color_Off'\$ "; \
