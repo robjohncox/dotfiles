@@ -134,6 +134,9 @@ alias please='sudo !!'
 alias scratchpad='vi /tmp/scratch.$$'
 alias hgrep='history | grep'
 
+# Emacs from command line always starts it in the terminal
+alias emacs='emacs --no-window-system'
+
 # Auto completion
 source ~/.django-bash-completion
 
