@@ -155,7 +155,7 @@ export BITBUCKET_USER=robjohncox
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Start ssh agent
-SSH_ENV="$HOME/.ssh/agent-env"
+#SSH_ENV="$HOME/.ssh/agent-env"
 
 function start_agent {
     /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
@@ -168,12 +168,12 @@ function start_agent {
     done
 }
 
-if [ -f "${SSH_ENV}" ]; then
-    . "${SSH_ENV}" > /dev/null
-    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-        start_agent;
-    }
-else
-    start_agent;
-fi
+#if [ -f "${SSH_ENV}" ]; then
+#    . "${SSH_ENV}" > /dev/null
+#    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+#        start_agent;
+#    }
+#else
+#    start_agent;
+#fi
 
