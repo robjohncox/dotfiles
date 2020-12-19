@@ -134,8 +134,10 @@ alias please='sudo !!'
 alias scratchpad='vi /tmp/scratch.$$'
 alias hgrep='history | grep'
 
-# Emacs from command line always starts it in the terminal
-alias emacs='emacs --no-window-system'
+# Emacs from command line always starts it in the terminal with
+# colors properly available (without all this, does not work in
+# tmux).
+alias emacs='TERM=xterm-256color emacs --no-window-system'
 
 # Auto completion
 source ~/.django-bash-completion
