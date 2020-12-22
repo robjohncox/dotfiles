@@ -161,10 +161,7 @@ function start_agent {
     /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
     chmod 600 "${SSH_ENV}"
     . "${SSH_ENV}" > /dev/null
-    /usr/bin/ssh-add;
-    for key in ~/.ssh/*_ecdsa ~/.ssh/*_rsa; do
-    	ssh-add $key > /dev/null 2>&1
-    done
+    /usr/bin/ssh-add ~/.ssh/*_*sa;
 }
 
 # On systems which are used directly (e.g. not servers that are SSH'd into)
