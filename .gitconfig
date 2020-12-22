@@ -7,7 +7,8 @@
     cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
     trustExitCode = true
 [user]
-    name = Robert Tillekeratne-Cox
+	name = Robert Tillekeratne-Cox
+	email = robjohncox@gmail.com
     # Do not configure global email - I don't want this in github, and
     # needs to be set different in work and home repositories.
 [alias]
