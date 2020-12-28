@@ -1,4 +1,14 @@
 ;; ----------------------------------
+;; PACKAGES
+;; ----------------------------------
+(require 'package)
+(add-to-list 'package-archives
+  '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives
+  '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(add-to-list 'load-path "~/.emacs.d/lib/")
+
+;; ----------------------------------
 ;; GENERAL
 ;; ----------------------------------
 
@@ -36,6 +46,16 @@
 
 ;; org directory included automatically in agenda
 (setq org-agenda-files '("~/org"))
+
+;; ----------------------------------
+;; YAML MODE
+;; ----------------------------------
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
+(add-hook 'yaml-mode-hook
+ '(lambda ()
+   (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
 
 ;; ----------------------------------
 ;; KEY BINDINGS
