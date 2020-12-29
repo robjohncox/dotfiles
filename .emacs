@@ -20,6 +20,9 @@
 (setq column-number-mode t)
 ;; follow symlinks automatically when opening files
 (setq vc-follow-symlinks t)
+;; show git status in left gutter
+(require 'git-gutter)
+(global-git-gutter-mode 1)
 
 ;; ----------------------------------
 ;; TEXT EDITING
