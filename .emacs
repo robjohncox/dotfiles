@@ -23,6 +23,7 @@
 ;; show git status in left gutter
 (require 'git-gutter)
 (global-git-gutter-mode 1)
+(git-gutter:linum-setup)
 
 ;; ----------------------------------
 ;; TEXT EDITING
