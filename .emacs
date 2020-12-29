@@ -24,7 +24,8 @@
 ;; ----------------------------------
 ;; TEXT EDITING
 ;; ----------------------------------
-
+;; default tab width
+(setq-default tab-width 4)
 ;; use spaces instead of tabs
 (setq-default indent-tabs-mode 0)
 ;; make text mode the default major mode
@@ -51,8 +52,7 @@
 ;; YAML MODE
 ;; ----------------------------------
 (require 'yaml-mode)
-(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-(add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
 (add-hook 'yaml-mode-hook
  '(lambda ()
    (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
