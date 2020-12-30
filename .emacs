@@ -14,16 +14,8 @@
 
 ;; theme
 (load-theme 'whiteboard)
-;; show line numbers on each line
-(global-display-line-numbers-mode)
-;; show column number in status bar
-(setq column-number-mode t)
 ;; follow symlinks automatically when opening files
 (setq vc-follow-symlinks t)
-;; show git status in left gutter
-(require 'git-gutter)
-(global-git-gutter-mode 1)
-(git-gutter:linum-setup)
 
 ;; ----------------------------------
 ;; TEXT EDITING
@@ -37,6 +29,15 @@
 ;; turn on auto-fill automatically in various modes
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
+
+;; ----------------------------------
+;; FRAME LAYOUT
+;; ----------------------------------
+
+;; show line numbers on each line
+(global-display-line-numbers-mode)
+;; show column number in status bar
+(setq column-number-mode t)
 
 ;; ----------------------------------
 ;; WEB BROWSING
