@@ -68,7 +68,7 @@
 ;; ----------------------------------
 
 (require 'yaml-mode)
-(add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
+7(add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
 (add-hook 'yaml-mode-hook
  '(lambda ()
    (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
@@ -81,7 +81,7 @@
   (package-install 'markdown-mode))
 
 ;; ----------------------------------
-;; MARKDOWN MODE
+;; DOCKER MODES
 ;; ----------------------------------
 
 (unless (package-installed-p 'dockerfile-mode)
@@ -110,15 +110,4 @@
 
 ;; projectile shortcuts
 (global-set-key (kbd "C-c p") 'projectile-command-map)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (yaml-mode markdown-mode projectile))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+
