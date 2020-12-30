@@ -1,5 +1,12 @@
 ;; ----------------------------------
-;; PACKAGES
+;; PACKAGE LIST
+;; ----------------------------------
+
+(setq package-list	
+  '(python-mode yaml-mode markdown-mode dockerfile-mode docker-compose-mode))
+
+;; ----------------------------------
+;; PACKAGE INSTALLATION
 ;; ----------------------------------
 
 (require 'package)
@@ -16,6 +23,13 @@
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 ;; Initialize package list
 (package-initialize)
+; fetch the list of packages available 
+(unless package-archive-contents
+  (package-refresh-contents))
+; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
 
 ;; ----------------------------------
 ;; GENERAL
@@ -72,22 +86,6 @@
 (add-hook 'yaml-mode-hook
  '(lambda ()
    (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
-
-;; ----------------------------------
-;; MARKDOWN MODE
-;; ----------------------------------
-
-(unless (package-installed-p 'markdown-mode)
-  (package-install 'markdown-mode))
-
-;; ----------------------------------
-;; DOCKER MODES
-;; ----------------------------------
-
-(unless (package-installed-p 'dockerfile-mode)
-  (package-install 'dockerfile-mode))
-(unless (package-installed-p 'docker-compose-mode)
-  (package-install 'docker-compose-mode))
 
 ;; ----------------------------------
 ;; KEY BINDINGS
