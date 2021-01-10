@@ -18,6 +18,7 @@
       '(("MELPA Stable" . 10)
         ("GNU ELPA"     . 5)
         ("MELPA"        . 0)))
+
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 ;; Ensures we can download packages on debian
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
@@ -50,9 +51,8 @@
 (setq-default indent-tabs-mode 0)
 ;; make text mode the default major mode
 (setq default-major-mode 'text-mode)
-;; turn on auto-fill automatically in various modes
+;; turn on auto-fill
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
-(add-hook 'org-mode-hook 'turn-on-auto-fill)
 
 ;; ----------------------------------
 ;; FRAME LAYOUT
@@ -76,6 +76,15 @@
 
 ;; org directory included automatically in agenda
 (setq org-agenda-files '("~/org"))
+;; turn on auto-fill
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
+
+;; ----------------------------------
+;; PYTHON MODE
+;; ----------------------------------
+
+(add-hook 'python-mode-hook (lambda() (display-fill-column-indicator-mode)))
+(add-hook 'python-mode-hook (lambda() (set-fill-column 80)))
 
 ;; ----------------------------------
 ;; YAML MODE
