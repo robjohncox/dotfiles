@@ -8,7 +8,7 @@
     trustExitCode = true
 [user]
 	name = Robert Tillekeratne-Cox
-	email = robjohncox@gmail.com
+    signingkey = 49C12AC534A243A9B47E028B0EA93055D08BBA0B
     # Do not configure global email - I don't want this in github, and
     # needs to be set different in work and home repositories.
 [alias]
