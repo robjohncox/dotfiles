@@ -89,7 +89,7 @@
 ;; ----------------------------------
 
 (add-hook 'python-mode-hook (lambda() (display-fill-column-indicator-mode)))
-(add-hook 'python-mode-hook (lambda() (set-fill-column 80)))
+(add-hook 'python-mode-hook (lambda() (set-fill-column 100)))
 
 ;; ----------------------------------
 ;; YAML MODE
@@ -100,6 +100,8 @@
 (add-hook 'yaml-mode-hook
  '(lambda ()
    (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
+(add-hook 'yaml-mode-hook (lambda() (display-fill-column-indicator-mode)))
+(add-hook 'yaml-mode-hook (lambda() (set-fill-column 80)))
 
 ;; ----------------------------------
 ;; KEY BINDINGS
