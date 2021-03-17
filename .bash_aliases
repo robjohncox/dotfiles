@@ -104,10 +104,10 @@ if [ $? -eq 0 ]; then \
   else \
     # @5 - Changes to working tree
     echo "'$IRed'"$(__git_ps1 " {%s}"); \
-  fi) '$Yellow$User@$Host:'$(basename $PWD)'$Color_Off'\$ "; \
+  fi) '$Yellow$User@$Host:'$(basename $PWD)'$Color_Off' "; \
 else \
   # @2 - Prompt when not in GIT repo
-  echo " '$Yellow$User@$Host:$PathShort$Color_Off'\$ "; \
+  echo " '$Yellow$User@$Host:$PathShort$Color_Off' "; \
 fi)'
 
 # Shared functions

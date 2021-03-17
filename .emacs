@@ -57,6 +57,7 @@
       auto-save-timeout 20              ; number of seconds idle time before auto-save (default: 30)
       auto-save-interval 200            ; number of keystrokes between auto-saves (default: 300)
       )
+
 ;; ----------------------------------
 ;; TEXT EDITING
 ;; ----------------------------------
@@ -91,14 +92,35 @@
 ;; ----------------------------------
 
 ;; org directory included automatically in agenda
-(setq org-agenda-files '("~/org"))
+(setq org-agenda-files (directory-files-recursively "/Volumes/GANDALF/org" "\\.org$"))
 ;; turn on auto-fill
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
-;; set our custom task states
-(setq org-todo-keywords
-	  '((sequence "TODO" "LIVE" "DONE")))
-(setq org-todo-keyword-faces
-	  '(("TODO" . "purple") ("LIVE" . "orange") ("DONE" . "blue")))
+(setq org-agenda-span 2
+      org-agenda-start-on-weekday nil
+      org-agenda-start-day "-0d")
+;; add alternate TODO workflows - by design we optimise for
+;; TODO and DONE being the primary workflow, but want to also
+;; allow more descriptive intermediate states when the need
+;; arises.
+(setq org-todo-keywords  '((sequence "TODO(t)" "|" "DONE(d)")
+						   (sequence "LIVE(l)" "REVW(r)" "WAIT(w)" "SHAM(s)" "|")))
+(setq org-todo-keyword-faces '(("LIVE" . "color-20")
+							   ("REVW" . "color-202")
+							   ("WAIT" . "color-214")
+							   ("SHAM" . "color-214")))
+;; all task progress logs put into a drawer
+(setq org-log-into-drawer t)
+;; hide scheduled tasks when looking at todos
+(setq org-agenda-todo-ignore-scheduled 'all)
+(setq org-agenda-todo-ignore-deadline 'all)
+(setq org-agenda-todo-ignore-with-date 'all)
+;; show tags next to heading
+(setq org-tags-column -80)
+(setq org-agenda-tags-column -80)
+;; new task capture templates
+(setq org-capture-templates
+	  '(("i" "Inbox" entry (file+headline "/Volumes/GANDALF/org/gtd.org" "Inbox")
+		 "** TODO %?")))
 
 ;; ----------------------------------
 ;; PYTHON MODE
@@ -112,7 +134,7 @@
 ;; ----------------------------------
 
 (require 'yaml-mode)
-7(add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
 (add-hook 'yaml-mode-hook
  '(lambda ()
    (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
@@ -140,7 +162,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(markdown-mode dockerfile-mode docker-compose-mode)))
+ '(org-agenda-files
+   '("/Volumes/GANDALF/org/brown-bag.org" "/Volumes/GANDALF/org/health.org" "/Volumes/GANDALF/org/gtd.org" "/Volumes/GANDALF/org/labminds.org" "/Volumes/GANDALF/org/vacations.org" "/Volumes/GANDALF/org/test.org" "/Volumes/GANDALF/org/tech.org" "/Volumes/GANDALF/org/recipes.org" "/Volumes/GANDALF/org/obs.org" "/Volumes/GANDALF/org/home.org" "/Volumes/GANDALF/org/finances.org" "/Volumes/GANDALF/org/career.org" "/Volumes/GANDALF/org/book.org")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
