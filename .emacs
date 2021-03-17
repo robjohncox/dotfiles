@@ -92,7 +92,7 @@
 ;; ----------------------------------
 
 ;; org directory included automatically in agenda
-(setq org-agenda-files (directory-files-recursively "/Volumes/GANDALF/org" "\\.org$"))
+(setq org-agenda-files (directory-files-recursively "~/org" "\\.org$"))
 ;; turn on auto-fill
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 (setq org-agenda-span 2
@@ -119,7 +119,7 @@
 (setq org-agenda-tags-column -80)
 ;; new task capture templates
 (setq org-capture-templates
-	  '(("i" "Inbox" entry (file+headline "/Volumes/GANDALF/org/gtd.org" "Inbox")
+	  '(("i" "Inbox" entry (file+headline "~/org/gtd.org" "Inbox")
 		 "** TODO %?")))
 
 ;; ----------------------------------
@@ -163,7 +163,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
-   '("/Volumes/GANDALF/org/brown-bag.org" "/Volumes/GANDALF/org/health.org" "/Volumes/GANDALF/org/gtd.org" "/Volumes/GANDALF/org/labminds.org" "/Volumes/GANDALF/org/vacations.org" "/Volumes/GANDALF/org/test.org" "/Volumes/GANDALF/org/tech.org" "/Volumes/GANDALF/org/recipes.org" "/Volumes/GANDALF/org/obs.org" "/Volumes/GANDALF/org/home.org" "/Volumes/GANDALF/org/finances.org" "/Volumes/GANDALF/org/career.org" "/Volumes/GANDALF/org/book.org")))
+   '("~/org/brown-bag.org" "~/org/health.org" "~/org/gtd.org" "~/org/labminds.org" "~/org/vacations.org" "~/org/test.org" "~/org/tech.org" "~/org/recipes.org" "~/org/obs.org" "~/org/home.org" "~/org/finances.org" "~/org/career.org" "~/org/book.org")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
