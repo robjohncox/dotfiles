@@ -13,6 +13,8 @@ main() {
 }
 
 parse_arguments() {
+    symlink_command="ln -s"
+
     while [[ $# -gt 0 ]]
     do
         local key="$1"
@@ -20,6 +22,9 @@ parse_arguments() {
             -h|--help)
                 usage
                 exit 1
+            ;;
+            -f|--force)
+                symlink_command="ln -sf"
             ;;
             *)
                 pr_err "Unknown argument: ${key}\n"
@@ -33,18 +38,22 @@ parse_arguments() {
 
 usage () {
     cat <<EOF
-Deploys dotfiles into the home directory.
-
+Deploys dotfiles into the home directory as symlinks.
 Usage: $0 [options]
 Options:
     -h, --help         Print help and exit
+    -f, --force        Force symlinks even when dotfiles exist
 EOF
 }
 
 deploy_dotfiles() {
 	echo "Deploying dotfiles..."
     for dot_file in $(find $dotfiles_dir_path -type f -name ".*"); do
-	    cp $dot_file ~/$(basename $dot_file)
+        if $symlink_command $dot_file ~/$(basename $dot_file) 2>/dev/null; then
+            echo "  $(basename $dot_file): Created symlink in home directory"
+        else
+            echo "  $(basename $dot_file): Already exists"
+        fi
     done
 }
 
@@ -52,9 +61,12 @@ deploy_emacs_libraries() {
 	echo "Deploying emacs libraries..."
 	mkdir -p ~/.emacs.d/lisp
 	for emacs_lib_file in $(find $dotfiles_dir_path/.emacs.d/lisp -type f -name "*.el"); do
-		cp $emacs_lib_file ~/.emacs.d/lisp/$(basename $emacs_lib_file)
+		if $symlink_command $emacs_lib_file ~/.emacs.d/lisp/$(basename $emacs_lib_file) 2>/dev/null; then
+			echo "  $(basename $emacs_lib_file): Created symlink in emacs lib directory"
+		else
+			echo "  $(basename $emacs_lib_file): Already exists"
+		fi
 	done
 }
 
 main "$@"
-
