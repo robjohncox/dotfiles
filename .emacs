@@ -121,8 +121,6 @@
 (setq org-capture-templates
 	  '(("i" "Inbox" entry (file+headline "~/org/gtd.org" "Inbox")
 		 "** TODO %?")))
-;; This makes sure we can use source templates
-(require 'org-tempo)
 ;; ----------------------------------
 ;; PYTHON MODE
 ;; ----------------------------------
@@ -164,7 +162,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
-   '("~/org/health.org" "~/org/brown-bag.org" "~/org/gtd.org" "~/org/vacations.org" "~/org/test.org" "~/org/tech.org" "~/org/recipes.org" "~/org/obs.org" "~/org/home.org" "~/org/finances.org" "~/org/career.org" "~/org/book.org")))
+   (quote
+	("~/org/health.org" "~/org/brown-bag.org" "~/org/gtd.org" "~/org/vacations.org" "~/org/tech.org" "~/org/recipes.org" "~/org/obs.org" "~/org/home.org" "~/org/finances.org" "~/org/career.org" "~/org/book.org"))))
  
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
