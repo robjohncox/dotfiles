@@ -121,6 +121,8 @@
 ;; new task capture templates
 (setq org-capture-templates
 	  '(("i" "Inbox" entry (file+headline "~/org/gtd.org" "Inbox")
+		 "** TODO %?")
+		("c" "Calendar" entry (file+headline "~/org/calendar.org" "Entries")
 		 "** TODO %?")))
 ;; ----------------------------------
 ;; PYTHON MODE
@@ -163,7 +165,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
-   '("~/org/labminds.org" "~/org/health.org" "~/org/brown-bag.org" "~/org/gtd.org" "~/org/vacations.org" "~/org/tech.org" "~/org/recipes.org" "~/org/obs.org" "~/org/home.org" "~/org/finances.org" "~/org/career.org" "~/org/book.org")))
+   '("~/org/labminds.org" "~/org/health.org" "~/org/brown-bag.org" "~/org/gtd.org" "~/org/vacations.org" "~/org/tech.org" "~/org/recipes.org" "~/org/obs.org" "~/org/home.org" "~/org/finances.org" "~/org/career.org" "~/org/book.org" "~/org/calendar.org")))
  
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
