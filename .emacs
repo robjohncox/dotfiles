@@ -163,7 +163,7 @@
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
    (quote
-	("~/org/health.org" "~/org/brown-bag.org" "~/org/gtd.org" "~/org/vacations.org" "~/org/tech.org" "~/org/recipes.org" "~/org/obs.org" "~/org/home.org" "~/org/finances.org" "~/org/career.org" "~/org/book.org"))))
+	("~/org/labminds.org" "~/org/health.org" "~/org/brown-bag.org" "~/org/gtd.org" "~/org/vacations.org" "~/org/tech.org" "~/org/recipes.org" "~/org/obs.org" "~/org/home.org" "~/org/finances.org" "~/org/career.org" "~/org/book.org"))))
  
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
