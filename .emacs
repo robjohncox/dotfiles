@@ -3,7 +3,7 @@
 ;; ----------------------------------
 
 (setq package-list	
-  '(python-mode yaml-mode markdown-mode dockerfile-mode docker-compose-mode))
+  '(python-mode yaml-mode markdown-mode dockerfile-mode docker-compose-mode robot-mode))
 
 ;; ----------------------------------
 ;; PACKAGE INSTALLATION
@@ -165,7 +165,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
-   '("~/org/labminds.org" "~/org/health.org" "~/org/brown-bag.org" "~/org/gtd.org" "~/org/vacations.org" "~/org/tech.org" "~/org/recipes.org" "~/org/obs.org" "~/org/home.org" "~/org/finances.org" "~/org/career.org" "~/org/book.org" "~/org/calendar.org")))
+   (quote
+	("~/org/labminds.org" "~/org/health.org" "~/org/brown-bag.org" "~/org/gtd.org" "~/org/vacations.org" "~/org/tech.org" "~/org/recipes.org" "~/org/obs.org" "~/org/home.org" "~/org/finances.org" "~/org/career.org" "~/org/book.org" "~/org/calendar.org")) t)
+ '(package-selected-packages
+   (quote
+	(python-mode markdown-mode dockerfile-mode docker-compose-mode))))
  
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
