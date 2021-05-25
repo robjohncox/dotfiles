@@ -120,9 +120,9 @@
 (setq org-agenda-tags-column -80)
 ;; new task capture templates
 (setq org-capture-templates
-	  '(("i" "Inbox" entry (file+headline "~/org/gtd.org" "Inbox")
+	  '(("i" "Inbox" entry (file+headline "~/org/inbox.org" "Inbox")
 		 "** TODO %?")
-		("c" "Calendar" entry (file+headline "~/org/calendar.org" "Entries")
+		("c" "Calendar" entry (file+headline "~/org/calendar.org" "Calendar")
 		 "** TODO %?")))
 ;; ----------------------------------
 ;; PYTHON MODE
@@ -166,7 +166,7 @@
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
    (quote
-	("~/org/labminds.org" "~/org/health.org" "~/org/brown-bag.org" "~/org/gtd.org" "~/org/vacations.org" "~/org/tech.org" "~/org/recipes.org" "~/org/obs.org" "~/org/home.org" "~/org/finances.org" "~/org/career.org" "~/org/book.org" "~/org/calendar.org")) t)
+	("~/org/labminds.org" "~/org/health.org" "~/org/inbox.org" "~/org/vacations.org" "~/org/tech.org" "~/org/recipes.org" "~/org/obs.org" "~/org/home.org" "~/org/finances.org" "~/org/career.org" "~/org/book.org" "~/org/calendar.org")) t)
  '(package-selected-packages
    (quote
 	(python-mode markdown-mode dockerfile-mode docker-compose-mode))))
