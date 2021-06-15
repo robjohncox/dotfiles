@@ -122,7 +122,9 @@
 (setq org-capture-templates
 	  '(("i" "Inbox" entry (file+headline "~/org/inbox.org" "Inbox")
 		 "** TODO %?")
-		("c" "Calendar" entry (file+headline "~/org/calendar.org" "Calendar")
+ 		("c" "Calendar" entry (file+headline "~/org/calendar.org" "Calendar")
+		 "** TODO %?")
+ 		("l" "LabMinds" entry (file+headline "~/org/labminds.org" "Inbox")
 		 "** TODO %?")))
 ;; ----------------------------------
 ;; PYTHON MODE
@@ -165,11 +167,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
-   (quote
-	("~/org/labminds.org" "~/org/health.org" "~/org/inbox.org" "~/org/vacations.org" "~/org/tech.org" "~/org/recipes.org" "~/org/obs.org" "~/org/home.org" "~/org/finances.org" "~/org/career.org" "~/org/book.org" "~/org/calendar.org")) t)
+   '("~/org/labminds.org" "~/org/health.org" "~/org/inbox.org" "~/org/vacations.org" "~/org/tech.org" "~/org/recipes.org" "~/org/obs.org" "~/org/home.org" "~/org/finances.org" "~/org/career.org" "~/org/book.org" "~/org/calendar.org") t)
  '(package-selected-packages
-   (quote
-	(python-mode markdown-mode dockerfile-mode docker-compose-mode))))
+   '(python-mode markdown-mode dockerfile-mode docker-compose-mode)))
  
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
