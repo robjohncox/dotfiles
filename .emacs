@@ -95,7 +95,7 @@
 (setq org-agenda-files (directory-files-recursively "~/org" "\\.org$"))
 ;; turn on auto-fill
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
-(setq org-agenda-span 2
+(setq org-agenda-span 1
       org-agenda-start-on-weekday nil
       org-agenda-start-day "-0d")
 ;; add alternate TODO workflows - by design we optimise for
