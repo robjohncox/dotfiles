@@ -109,10 +109,6 @@
 							   ("TEST" . "color-20")
 							   ("WAIT" . "color-214")
 							   ("SHAM" . "color-214")))
-;; allow refile to move entries to other org files
-(setq org-refile-targets
-	  '((nil :maxlevel . 3)
-		(org-agenda-files :maxlevel . 3)))
 ;; all task progress logs put into a drawer
 (setq org-log-into-drawer t)
 ;; hide scheduled tasks when looking at todos
