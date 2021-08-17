@@ -124,8 +124,11 @@
 		 "** TODO %?")
  		("c" "Calendar" entry (file+headline "~/org/calendar.org" "Calendar")
 		 "** TODO %?")
- 		("l" "LabMinds" entry (file+headline "~/org/labminds.org" "Inbox")
+ 		("l" "LabMinds" entry (file+headline "~/org/labminds.org" "LMInbox")
 		 "** TODO %?")))
+;; allow re-file across all org agenda files
+(setq org-refile-targets '((nil :maxlevel . 9)
+                           (org-agenda-files :maxlevel . 9)))
 ;; ----------------------------------
 ;; PYTHON MODE
 ;; ----------------------------------
