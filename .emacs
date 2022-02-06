@@ -57,6 +57,8 @@
       auto-save-timeout 20              ; number of seconds idle time before auto-save (default: 30)
       auto-save-interval 200            ; number of keystrokes between auto-saves (default: 300)
       )
+;; automatically reload file changes
+(global-auto-revert-mode 1)
 
 ;; ----------------------------------
 ;; TEXT EDITING
@@ -170,7 +172,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
-   '("~/org/labminds.org" "~/org/health.org" "~/org/inbox.org" "~/org/vacations.org" "~/org/tech.org" "~/org/recipes.org" "~/org/obs.org" "~/org/home.org" "~/org/finances.org" "~/org/career.org" "~/org/book.org" "~/org/calendar.org") t)
+   '("~/org/mons.org" "~/org/labminds.org" "~/org/health.org" "~/org/inbox.org" "~/org/vacations.org" "~/org/tech.org" "~/org/recipes.org" "~/org/obs.org" "~/org/home.org" "~/org/finances.org" "~/org/career.org" "~/org/book.org" "~/org/calendar.org") t)
  '(package-selected-packages
    '(python-mode markdown-mode dockerfile-mode docker-compose-mode)))
  
