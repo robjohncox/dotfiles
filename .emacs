@@ -105,10 +105,8 @@
 ;; allow more descriptive intermediate states when the need
 ;; arises.
 (setq org-todo-keywords  '((sequence "TODO(t)" "|" "DONE(d)")
-						   (sequence "LIVE(l)" "REVW(r)" "TEST(e)" "WAIT(w)" "SHAM(s)" "|")))
+						   (sequence "LIVE(l)" "WAIT(w)" "SHAM(s)" "|")))
 (setq org-todo-keyword-faces '(("LIVE" . "color-20")
-							   ("REVW" . "color-202")
-							   ("TEST" . "color-20")
 							   ("WAIT" . "color-214")
 							   ("SHAM" . "color-214")))
 ;; all task progress logs put into a drawer
@@ -172,9 +170,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
-   '("~/org/mons.org" "~/org/labminds.org" "~/org/health.org" "~/org/inbox.org" "~/org/vacations.org" "~/org/tech.org" "~/org/recipes.org" "~/org/obs.org" "~/org/home.org" "~/org/finances.org" "~/org/career.org" "~/org/book.org" "~/org/calendar.org") t)
+   (quote
+	("~/org/mons.org" "~/org/labminds.org" "~/org/health.org" "~/org/inbox.org" "~/org/vacations.org" "~/org/tech.org" "~/org/recipes.org" "~/org/obs.org" "~/org/home.org" "~/org/finances.org" "~/org/career.org" "~/org/book.org" "~/org/calendar.org")) t)
  '(package-selected-packages
-   '(python-mode markdown-mode dockerfile-mode docker-compose-mode)))
+   (quote
+	(python-mode markdown-mode dockerfile-mode docker-compose-mode))))
  
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
