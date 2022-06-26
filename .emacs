@@ -171,7 +171,7 @@
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
    (quote
-	("~/org/mons.org" "~/org/labminds.org" "~/org/health.org" "~/org/inbox.org" "~/org/vacations.org" "~/org/tech.org" "~/org/recipes.org" "~/org/obs.org" "~/org/home.org" "~/org/finances.org" "~/org/career.org" "~/org/book.org" "~/org/calendar.org")) t)
+	("~/org/labminds.org" "~/org/health.org" "~/org/inbox.org" "~/org/vacations.org" "~/org/tech.org" "~/org/recipes.org" "~/org/obs.org" "~/org/home.org" "~/org/finances.org" "~/org/career.org" "~/org/book.org" "~/org/calendar.org")))
  '(package-selected-packages
    (quote
 	(python-mode markdown-mode dockerfile-mode docker-compose-mode))))
