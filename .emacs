@@ -105,10 +105,8 @@
 ;; allow more descriptive intermediate states when the need
 ;; arises.
 (setq org-todo-keywords  '((sequence "TODO(t)" "|" "DONE(d)")
-						   (sequence "LIVE(l)" "REVW(r)" "TEST(e)" "WAIT(w)" "SHAM(s)" "|")))
+						   (sequence "LIVE(l)" "WAIT(w)" "SHAM(s)" "|")))
 (setq org-todo-keyword-faces '(("LIVE" . "color-20")
-							   ("REVW" . "color-202")
-							   ("TEST" . "color-20")
 							   ("WAIT" . "color-214")
 							   ("SHAM" . "color-214")))
 ;; all task progress logs put into a drawer
