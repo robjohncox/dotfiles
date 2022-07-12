@@ -10,6 +10,7 @@
 	name = Robert Tillekeratne-Cox
 	signingkey = D08BBA0B
 	gpgsign = true
+	email = robjohncox@gmail.com
     # Do not configure global email - I don't want this in github, and
     # needs to be set different in work and home repositories.
 [alias]

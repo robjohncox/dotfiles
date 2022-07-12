@@ -3,7 +3,7 @@
 ;; ----------------------------------
 
 (setq package-list	
-  '(python-mode yaml-mode markdown-mode dockerfile-mode docker-compose-mode robot-mode))
+  '(python-mode yaml-mode markdown-mode dockerfile-mode docker-compose-mode robot-mode htmlize))
 
 ;; ----------------------------------
 ;; PACKAGE INSTALLATION
@@ -126,7 +126,7 @@
 		 "** TODO %?")
  		("c" "Calendar" entry (file+headline "~/org/calendar.org" "Calendar")
 		 "** TODO %?")
- 		("l" "LabMinds" entry (file+headline "~/org/labminds.org" "LMInbox")
+ 		("m" "Motive" entry (file+headline "~/org/motive.org" "Inbox")
 		 "** TODO %?")))
 ;; allow re-file across all org agenda files
 (setq org-refile-targets '((nil :maxlevel . 9)
@@ -172,9 +172,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
-   '("~/org/mons.org" "~/org/labminds.org" "~/org/health.org" "~/org/inbox.org" "~/org/vacations.org" "~/org/tech.org" "~/org/recipes.org" "~/org/obs.org" "~/org/home.org" "~/org/finances.org" "~/org/career.org" "~/org/book.org" "~/org/calendar.org") t)
+   (quote
+	("~/org/motive.org" "~/org/health.org" "~/org/inbox.org" "~/org/vacations.org" "~/org/tech.org" "~/org/recipes.org" "~/org/obs.org" "~/org/home.org" "~/org/finances.org" "~/org/career.org" "~/org/book.org" "~/org/calendar.org")))
  '(package-selected-packages
-   '(python-mode markdown-mode dockerfile-mode docker-compose-mode)))
+   (quote
+	(python-mode markdown-mode dockerfile-mode docker-compose-mode))))
  
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
