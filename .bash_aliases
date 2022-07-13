@@ -154,6 +154,8 @@ export BITBUCKET_USER=robjohncox
 # Stops OSX telling me to use zsh
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+export GPG_TTY=$(tty)
+
 # Start ssh agent
 SSH_ENV="$HOME/.ssh/agent-env"
 
