@@ -90,46 +90,6 @@
 (setq browse-url-browser-function 'eww-browse-url)
 
 ;; ----------------------------------
-;; ORG MODE
-;; ----------------------------------
-
-;; org directory included automatically in agenda
-(setq org-agenda-files (directory-files-recursively "~/org" "\\.org$"))
-;; turn on auto-fill
-(add-hook 'org-mode-hook 'turn-on-auto-fill)
-(setq org-agenda-span 1
-      org-agenda-start-on-weekday nil
-      org-agenda-start-day "-0d")
-;; add alternate TODO workflows - by design we optimise for
-;; TODO and DONE being the primary workflow, but want to also
-;; allow more descriptive intermediate states when the need
-;; arises.
-(setq org-todo-keywords  '((sequence "TODO(t)" "|" "DONE(d)")
-						   (sequence "LIVE(l)" "WAIT(w)" "SHAM(s)" "|")))
-(setq org-todo-keyword-faces '(("LIVE" . "color-20")
-							   ("WAIT" . "color-214")
-							   ("SHAM" . "color-214")))
-;; all task progress logs put into a drawer
-(setq org-log-into-drawer t)
-;; hide scheduled tasks when looking at todos
-(setq org-agenda-todo-ignore-scheduled 'all)
-(setq org-agenda-todo-ignore-deadline 'all)
-(setq org-agenda-todo-ignore-with-date 'all)
-;; show tags next to heading
-(setq org-tags-column -80)
-(setq org-agenda-tags-column -80)
-;; new task capture templates
-(setq org-capture-templates
-	  '(("i" "Inbox" entry (file+headline "~/org/inbox.org" "Inbox")
-		 "** TODO %?")
- 		("c" "Calendar" entry (file+headline "~/org/calendar.org" "Calendar")
-		 "** TODO %?")
- 		("m" "Motive" entry (file+headline "~/org/motive.org" "Inbox")
-		 "** TODO %?")))
-;; allow re-file across all org agenda files
-(setq org-refile-targets '((nil :maxlevel . 9)
-                           (org-agenda-files :maxlevel . 9)))
-;; ----------------------------------
 ;; PYTHON MODE
 ;; ----------------------------------
 
@@ -164,19 +124,3 @@
 ;; CUSTOM EMACS STUFF
 ;; ----------------------------------
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(org-agenda-files
-   '("~/org/motive.org" "~/org/health.org" "~/org/inbox.org" "~/org/vacations.org" "~/org/tech.org" "~/org/recipes.org" "~/org/obs.org" "~/org/home.org" "~/org/finances.org" "~/org/career.org" "~/org/book.org" "~/org/calendar.org") t)
- '(package-selected-packages
-   '(python-mode markdown-mode dockerfile-mode docker-compose-mode)))
- 
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
