@@ -148,9 +148,6 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 # One-off editing should default to vim
 export EDITOR=vim
 
-# Needed at work
-export BITBUCKET_USER=robjohncox
-
 # Stops OSX telling me to use zsh
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
