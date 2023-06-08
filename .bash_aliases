@@ -134,13 +134,13 @@ alias please='sudo !!'
 alias scratchpad='vi /tmp/scratch.$$'
 alias hgrep='history | grep'
 
+# Uses comprehensive bash completion (brew install bash-completion)
+[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+
 # Emacs from command line always starts it in the terminal with
 # colors properly available (without all this, does not work in
 # tmux).
 alias emacs='TERM=xterm-256color emacs --no-window-system'
-
-# Auto completion
-source ~/.django-bash-completion
 
 # Virtualenv prompt is usually superfluous
 export VIRTUAL_ENV_DISABLE_PROMPT=1
@@ -151,7 +151,8 @@ export EDITOR=vim
 # Stops OSX telling me to use zsh
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-export GPG_TTY=$(tty)
+# Stops docker asking me to use Snyk
+export DOCKER_SCAN_SUGGEST=false
 
 # Start ssh agent
 SSH_ENV="$HOME/.ssh/agent-env"

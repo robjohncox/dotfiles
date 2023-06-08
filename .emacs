@@ -90,6 +90,35 @@
 (setq browse-url-browser-function 'eww-browse-url)
 
 ;; ----------------------------------
+;; ORG MODE
+;; ----------------------------------
+
+;; add all default org files to agenda
+(setq org-agenda-files '("~/org"))
+;; turn on auto fill
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
+;; add live and wait to keywords
+(setq org-todo-keywords '((sequence "TODO(t)" "LIVE(l)" "WAIT(w)" "|" "DONE(d)")))
+(setq org-todo-keyword-faces '(("LIVE" . "blue") ("WAIT" . "magenta")))
+;; configure agenda view
+(setq org-agenda-span 1
+      org-agenda-start-on-weekday nil
+      org-agenda-start-day "-0d")
+(setq org-log-into-drawer t)
+(setq org-agenda-todo-ignore-scheduled 'all)
+(setq org-agenda-todo-ignore-deadline 'all)
+(setq org-agenda-todo-ignore-with-date 'all)
+(setq org-tags-column -80)
+(setq org-agenda-tags-column -80)
+;; custom org capture templates
+(setq org-capture-templates
+	  '(("i" "Inbox" entry (file+headline "~/org/todo.org" "Inbox")
+		 "** TODO %?")))
+;; allow refile across all org agenda files
+(setq org-refile-targets '((nil :maxlevel . 9)
+                           (org-agenda-files :maxlevel . 9)))
+
+;; ----------------------------------
 ;; PYTHON MODE
 ;; ----------------------------------
 
