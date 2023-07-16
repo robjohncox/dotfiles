@@ -158,6 +158,9 @@ export DOCKER_SCAN_SUGGEST=false
 # Start ssh agent
 SSH_ENV="$HOME/.ssh/agent-env"
 
+# Extra path stuff
+export PATH="/usr/local/go/bin:${PATH}"
+
 function start_agent {
     /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
     chmod 600 "${SSH_ENV}"
