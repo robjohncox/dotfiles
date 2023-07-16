@@ -136,6 +136,7 @@ alias hgrep='history | grep'
 
 # Uses comprehensive bash completion (brew install bash-completion)
 [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+[[ -r "~/.git-completion.bash" ]] && . "~/.git-completion.bash"
 
 # Emacs from command line always starts it in the terminal with
 # colors properly available (without all this, does not work in

@@ -3,7 +3,7 @@
 ;; ----------------------------------
 
 (setq package-list	
-  '(python-mode yaml-mode markdown-mode dockerfile-mode docker-compose-mode robot-mode htmlize))
+  '(python-mode yaml-mode markdown-mode dockerfile-mode docker-compose-mode robot-mode go-mode htmlize))
 
 ;; ----------------------------------
 ;; PACKAGE INSTALLATION
@@ -104,6 +104,7 @@
 (setq org-agenda-span 1
       org-agenda-start-on-weekday nil
       org-agenda-start-day "-0d")
+(setq org-deadline-warning-days 0)
 (setq org-log-into-drawer t)
 (setq org-agenda-todo-ignore-scheduled 'all)
 (setq org-agenda-todo-ignore-deadline 'all)
@@ -113,6 +114,8 @@
 ;; custom org capture templates
 (setq org-capture-templates
 	  '(("i" "Inbox" entry (file+headline "~/org/todo.org" "Inbox")
+		 "** TODO %?")
+	    ("a" "ATLAS" entry (file+headline "~/org/atlas.org" "ATLAS")
 		 "** TODO %?")))
 ;; allow refile across all org agenda files
 (setq org-refile-targets '((nil :maxlevel . 9)
@@ -153,3 +156,16 @@
 ;; CUSTOM EMACS STUFF
 ;; ----------------------------------
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(go-mode robot-mode python-mode markdown-mode htmlize dockerfile-mode docker-compose-mode)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
